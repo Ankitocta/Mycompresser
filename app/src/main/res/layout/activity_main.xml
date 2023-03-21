@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blacksade"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/blacksade"
+        app:layout_constraintBottom_toTopOf="@+id/compress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adView">
+
+        <LinearLayout
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blacksade"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_margin="7dp"
+                    android:layout_weight="1"
+                    android:background="#F8F5F5">
+
+                    <ImageView
+                        android:id="@+id/Actualimage"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="#997C7878"
+                        android:padding="6dp"
+                        android:scaleType="centerCrop"
+
+                        app:layout_constraintBottom_toTopOf="@+id/Actualimagetext"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@drawable/ic_baseline_star_rate_24" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:tint="#000000"
+                        app:layout_constraintBottom_toBottomOf="@+id/Actualimage"
+                        app:layout_constraintEnd_toEndOf="@+id/Actualimage"
+                        app:srcCompat="@drawable/ic_baseline_crop_24"
+                        tools:ignore="UseAppTint" />
+
+                    <TextView
+                        android:id="@+id/Actualimagetext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Actual image"
+                        android:textColor="#000000"
+                        app:layout_constraintBottom_toTopOf="@+id/actualfilesize"
+                        app:layout_constraintEnd_toEndOf="@+id/Actualimage"
+                        app:layout_constraintStart_toStartOf="@+id/Actualimage" />
+
+                    <TextView
+                        android:id="@+id/actualfilesize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="File size :"
+                        android:textColor="#000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/Actualimage"
+                        app:layout_constraintStart_toStartOf="@+id/Actualimage" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_margin="7dp"
+                    android:layout_weight="1"
+                    android:background="#F8F5F5">
+
+                    <ImageView
+                        android:id="@+id/cropcompressimage"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="#997A7777"
+                        app:layout_constraintBottom_toTopOf="@+id/Afterimage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@drawable/ic_baseline_star_rate_24" />
+
+                    <TextView
+                        android:id="@+id/FileSizeafter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="File Size:"
+                        android:textColor="#000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Afterimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="After Compress"
+                        android:textColor="#000000"
+                        app:layout_constraintBottom_toTopOf="@+id/FileSizeafter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.512"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/savedattent12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/Pickimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#2B4BFF"
+                    android:minWidth="67dp"
+                    android:text="Pick Image"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+
+                    app:icon="@drawable/ic_baseline_image_24"
+                    app:iconTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/sharetext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#03A9F4"
+                    android:text="share"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    app:icon="@drawable/ic_baseline_share_24"
+                    app:iconTint="#FFFFFF" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Cornercard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="18dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/idSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="45dp"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="#FF0000"
+                        android:ems="4"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:textColor="#FF0000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spinner212"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:backgroundTint="#FF9800"
+                        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
+                        app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal"
+                        app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enter Compress to image  Size"
+                        android:textColor="#000000"
+                        app:layout_constraintEnd_toEndOf="@+id/spinner212"
+                        app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/last"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="auto">
+
+                <LinearLayout
+                    android:id="@+id/savedattent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                    <Button
+                        android:id="@+id/sharetext12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="56dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#2A46E1"
+                        android:capitalize="characters"
+                        android:text="Image to pdf"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible"
+                        app:icon="@drawable/ic_baseline_picture_as_pdf_24"
+                        app:iconTint="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/Pickimage12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#2B4BFF"
+                        android:minWidth="67dp"
+                        android:text="How To Use"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"
+                        app:icon="@drawable/ic_baseline_play_circle_filled_24"
+                        app:iconTint="#FFFFFF" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="28dp"
+                        android:gravity="center"
+                        android:text="Hieght"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/setwidth"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.523" />
+
+                    <EditText
+                        android:id="@+id/setwidth"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:shadowColor="#813030"
+                        android:singleLine="true"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="77dp"
+                        android:gravity="center"
+                        android:text="Width"
+                        android:textColor="#FFFEFE"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/textView14"
+                        tools:ignore="MissingConstraints" />
+
+                    <EditText
+                        android:id="@+id/setHight"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:ems="10"
+                        android:focusableInTouchMode="true"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView17"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Resize Image"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/note_1_first_click_choose_image_button_share_button_active_after_compress_you_want_to_crop_image_click_actual_image_after_image_selection_don_t_close_app_after_pick_image_on_drive"
+                    android:textColor="#E8E8E8"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                <Button
+                    android:id="@+id/buttonuse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="How to Use"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image Compressing"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Toollbarcons"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+        <ImageView
+            android:id="@+id/camerato_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_baseline_create_new_folder_24"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/setting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_create_new_folder_24"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/camerato_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="7dp"
+            android:gravity="center"
+            android:text="Image Compresser"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="83dp"
+        android:layout_height="98dp"
+
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-8751112723443298/4819432121"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Toollbarcons"></com.google.android.gms.ads.AdView>
+
+    <Button
+        android:id="@+id/compress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="#F44336"
+        android:keepScreenOn="true"
+        android:text="Compress"
+        android:textColor="#FFFFFF"
+        app:iconPadding="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
